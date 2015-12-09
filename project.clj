@@ -8,15 +8,15 @@
                  :post "flambo-user@googlegroups.com"}
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [org.clojure/tools.logging "0.3.1"]
-                 [com.google.guava/guava "18.0"]
+                 [com.google.guava/guava "19.0"]
                  [yieldbot/serializable-fn "0.1.1"
                   :exclusions [com.twitter/chill-java]]
                  [com.twitter/carbonite "1.4.0"
                   :exclusions [com.twitter/chill-java]]
-                 [com.twitter/chill_2.10 "0.5.0"
+                 [com.twitter/chill_2.10 "0.7.2"
                   :exclusions [org.scala-lang/scala-library]]]
   :profiles {:dev
-             {:dependencies [[midje "1.6.3"]
+             {:dependencies [[midje "1.8.2"]
                              [criterium "0.4.3"]]
               :plugins [[lein-midje "3.1.3"]
                         [michaelblume/lein-marginalia "0.9.0"]
@@ -28,12 +28,12 @@
                     flambo.example.tfidf]}
              :provided
              {:dependencies
-              [[org.apache.spark/spark-core_2.10 "1.5.1"]
-               [org.apache.spark/spark-streaming_2.10 "1.5.1"]
-               [org.apache.spark/spark-streaming-kafka_2.10 "1.5.1"]
-               [org.apache.spark/spark-streaming-flume_2.10 "1.5.1"]
-               [org.apache.spark/spark-sql_2.10 "1.5.1"]
-               [com.databricks/spark-csv_2.10 "1.0.1"]]}
+              [[org.apache.spark/spark-core_2.10 "1.5.2"]
+               [org.apache.spark/spark-streaming_2.10 "1.5.2"]
+               [org.apache.spark/spark-streaming-kafka_2.10 "1.5.2"]
+               [org.apache.spark/spark-streaming-flume_2.10 "1.5.2"]
+               [org.apache.spark/spark-sql_2.10 "1.5.2"]
+               [com.databricks/spark-csv_2.10 "1.3.0"]]}
              :clojure-1.6
              {:dependencies [[org.clojure/clojure "1.6.0"]]}
              :uberjar
