@@ -52,7 +52,8 @@
                      :memory-only-ser-2 StorageLevels/MEMORY_ONLY_SER_2
                      :memory-and-disk-2 StorageLevels/MEMORY_AND_DISK_2
                      :memory-and-disk-ser-2 StorageLevels/MEMORY_AND_DISK_SER_2
-                     :disk-only-2 StorageLevels/DISK_ONLY_2})
+                     :disk-only-2 StorageLevels/DISK_ONLY_2
+                     :off-heap StorageLevels/OFF_HEAP})
 
 (defmacro fn
   [& body]
@@ -500,12 +501,12 @@
   (Note: this is currently not executed in parallel. Instead, the driver
   program computes all the elements)."
   ([rdd cnt]
-    (.takeOrdered rdd cnt))  
+    (.takeOrdered rdd cnt))
   ([rdd cnt compare-fn]
-    (.takeOrdered rdd cnt 
+    (.takeOrdered rdd cnt
       (if (instance? Comparator compare-fn)
         compare-fn
-        (comparator compare-fn)))))  
+        (comparator compare-fn)))))
 
 (defmulti histogram "compute histogram of an RDD of doubles"
   (fn [_ bucket-arg] (sequential? bucket-arg)))
